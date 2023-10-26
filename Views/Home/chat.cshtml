@@ -1,0 +1,38 @@
+﻿@model List<SignalR_chat.Models.MessageModel>
+<div class="container col-10 chat-window">
+    <div class="row">
+        <div class="mx-auto">
+            <div class="row p-1 justify-content-center align-items-center">
+                <div class="col-7 chat-title">暱 稱：@ViewBag.userName</div>
+            </div>
+            <input class="form-control" type="hidden" id="InputuserName" value="@ViewBag.userName" />
+            <input class="form-control" type="hidden" id="InputuserID" value="@ViewBag.userID" />
+            <div class="row p-1 justify-content-center">
+                <ul id="messagesList" class="col-10 chat-messages">
+                    @{
+                        @foreach (var message in Model)
+                        {
+                            if (message.userID == ViewBag.userID)
+                            {
+                                <li style="color:#447373;">@message.userName ： @message.Content</li>
+                            }
+                            else
+                            {
+                                <li>@message.userName ： @message.Content</li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="row p-1 justify-content-center align-items-center">
+                <div class="col-8"><input class="form-control" type="text" id="InputMessage" /></div>
+                <div class="col-2 align-items-center ">
+                    <input class="form-control btn-custom" type="button" id="sendButton" value="傳送" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat_v0.3.js"></script>

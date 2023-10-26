@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@model SignalR_chat.Models.MessageModel
+
+<div>
+    <div id="App">
+        <h1>SignalR Chat Room</h1>
+        <div class="chat-box">
+            <div v-for="message in messages" :key="message.id">
+                {{ message.user }}: {{ message.text }}
+            </div>
+        </div>
+        @* <input v-model="newMessage" @keyup.enter="sendMessage" placeholder="Type a message..." /> *@
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- 聊天框框 -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">聊天框</div>
+                    <div class="panel-body" id="chat-box">
+                        <!-- 这里显示聊天消息 -->
+                    </div>
+                </div>
+
+                <!-- 發送訊息區塊 -->
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="userName">使用者名字：</label>
+                            <input type="text" class="form-control" id="userName" readonly value="@ViewBag.user">
+                        </div>
+                        <div class="form-group">
+                            <label for="messageText">訊息：</label>
+                            <textarea class="form-control" id="messageText"></textarea>
+                        </div>
+                        <button class="btn btn-primary" id="sendMessage">發送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 使用JavaScript处理消息的发送和接收
+        // 你需要使用SignalR或其他实时通信技术来实现实时聊天功能
+    </script>
+</div>

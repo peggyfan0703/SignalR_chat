@@ -1,0 +1,96 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.custom-margin {
+    margin-top: 30px; 
+}
+
+ul {
+    list-style: none;
+}
+
+.btn-custom {
+    color: #528B8B;
+    background-color: white;
+    border-color: white;
+    font-weight: bold;
+}
+
+    .btn-custom:hover, .btn-custom:focus, .btn-custom:active:hover {
+        color: #fff;
+        background-color: #528B8B;
+        border-color: #528B8B;
+    }
+
+.chat-window {
+    max-width: 200px;
+    border-radius: 20px;
+    background: #70e1f5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom right, #D2E9FF, #eaecc6); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom right, #D2E9FF, #eaecc6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 30px 20px;
+}
+
+.chat-messages {
+    max-height: 300px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    background: rgba(255, 255, 255, 0.6);
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-button {
+
+      background: transparent;
+
+      border-radius: 4px;
+
+    }
+
+    &::-webkit-scrollbar-track-piece {
+
+      background: transparent;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(82, 139, 139, 0.4);
+        border: 1px solid rgba(82, 139, 139, 0.4);
+    }
+
+    &::-webkit-scrollbar-track {
+
+      box-shadow: transparent;
+
+    }
+}
+
+.chat-title {
+    font-size: 18px;
+    text-align: center;
+    color: #528B8B;
+    font-weight: bold;
+}
